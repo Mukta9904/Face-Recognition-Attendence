@@ -25,7 +25,6 @@ registerVideoButton.addEventListener("click", () => {
         const blob = new Blob(chunks, { type: "video/webm" });
         const formData = new FormData();
         formData.append("video", blob, "recorded_video"+ Math.random().toString(36).slice(2) + ".webm");
-        console.log();
         fetch("/upload", {
           method: "POST",
           body: formData,
